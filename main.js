@@ -13,6 +13,15 @@ overlay.addEventListener('click', () => {
     hideModal();
 })
 
+document.addEventListener('keydown', (event) => {
+    if (event.key == 'Escape') {
+        hideModal();
+    }
+    else if (event.key == 'a' | event.key == '+') {
+        showModal();
+    };
+});
+
 function showModal() {
     if (!overlay.classList.contains('active')) {
         overlay.classList.add('active');

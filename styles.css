@@ -1,6 +1,10 @@
 :root {
     --gray-color:#E5E4E2;
+    --gray-color-hover: #bdbdbc;
     --green-color: #90EE90;
+    --green-color-hover: #39e739;
+    --red-color: #ff313190;
+    --red-color-hover: #ff2b2b;
 }
 
 body, html {
@@ -12,6 +16,7 @@ body, html {
 }
 
 * {
+    transition: all .2s ease-in-out;
     margin: 0;
     font-family: 'Quicksand', 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
 }
@@ -46,8 +51,16 @@ button {
     padding: 10px 20px;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .add-btn {
     margin: 15px 0px;
+}
+
+.add-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .book-grid {
@@ -88,16 +101,37 @@ p {
     border-radius: 15px;
 }
 
-.read-btn {
-    background-color:  	#FF3131;
+input[type='checkbox']:checked {
+    accent-color: white;
 }
 
+input[type='text']:focus, input[type='number']:focus {
+    outline: thin solid;
+}
+
+.read-btn {
+    background-color: var(--red-color);
+}
+
+.read-btn:hover {
+    background-color: var(--red-color-hover);
+}
+
+
 .read-btn.true {
-    background-color: #90EE90;
+    background-color: var(--green-color);
+}
+
+.read-btn.true:hover {
+    background-color: var(--green-color-hover);
 }
 
 .remove-btn {
     background-color: var(--gray-color);
+}
+
+.remove-btn:hover {
+    background-color: var(--gray-color-hover);
 }
 
 .book-text {
@@ -169,6 +203,11 @@ p {
 
 .submit-btn {
     background-color: var(--green-color);
+}
+
+.submit-btn:hover {
+    background-color: var(--green-color-hover);
+
 }
 
 .hidden {
