@@ -1,0 +1,176 @@
+:root {
+    --gray-color:#E5E4E2;
+    --green-color: #90EE90;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+    background-color: var(--gray-color);
+}
+
+* {
+    margin: 0;
+    font-family: 'Quicksand', 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+}
+
+.header {
+    background-color: white;
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text {
+    margin: 0;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+button {
+    background-color: white;
+    font-size: 25px;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.add-btn {
+    margin: 15px 0px;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-auto-rows: 1fr;
+    width: 75%;
+    margin: auto;
+    gap: 35px;
+    justify-content: center;
+}
+
+.book-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 25px 15px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px -15px black;
+}
+
+p {
+    font-weight: 300;
+    font-size: 26px;
+    text-align: center;
+}
+
+.title {
+    font-size: 35px;
+}
+
+.book-card button {
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 15px;
+}
+
+.read-btn {
+    background-color:  	#FF3131;
+}
+
+.read-btn.true {
+    background-color: #90EE90;
+}
+
+.remove-btn {
+    background-color: var(--gray-color);
+}
+
+.book-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    padding: 5px;
+}
+
+.overlay {
+    display: none;
+    top: 0;
+    right: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.overlay.active {
+    display: block;
+}
+
+.add-book-modal {
+    z-index: 1;
+    border: 1px solid black;
+    border-radius: 15px;
+    position: fixed;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    background-color: var(--gray-color);
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.add-book-modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.book-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+}
+
+.add-book-modal input, .add-book-modal label {
+    border: 0;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+.read-input-wrapper {
+    align-self: center;
+}
+
+.add-book-modal .read-label {padding: 7px;}
+
+.submit-btn {
+    background-color: var(--green-color);
+}
+
+.hidden {
+    display: none;
+}

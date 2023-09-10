@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="header-text">Blossmd Library</h1>
+    </div>
+    <div class="main">
+        <button class="add-btn" id="add-button">+ Add a book</button>
+        <div class="book-grid" id="book-grid">
+        </div>
+    </div>
+    <div class="add-book-modal" id="book-modal">
+        <form class="book-form" id="book-form">
+            <h3>Add new book</h3>
+            <input name="title" class="input-title" id="book-title" type="text" placeholder="Title" required maxlength="100">
+            <input name="author" class="input-author" id="book-author" type="text" placeholder="Author" required maxlength="100">
+            <input name="pages" class="input-pages" id="book-pages" type="number" placeholder="Pages" required min="0" max="100000">
+            <div class="read-input-wrapper">
+                <label class="read-label" for="book-read">Have you read it?</label>
+                <input name="read" type="checkbox" id="book-read">
+            </div>
+            <button type="submit" class="submit-btn" id="submit-button">Sumbit</button>
+        </form>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="book-card hidden">
+        <div class="book-text">
+            <p class="title">Battle Royale</p>
+            <p class="author">Iamsorry Idontknow</p>
+            <p class="pages">200</p>
+        </div>
+        <div class="button-wrapper">
+            <button class="read-btn">Not Read</button>
+            <button class="remove-btn">Remove</button>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
