@@ -51,39 +51,49 @@ function formSubmit(event) {
 
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    };
+};
+
+class bookCard {
+    constructor(bookObject) {
+        const currentCard = bookCardBlueprint.cloneNode(true);
+    
+        const textWrapper = currentCard.querySelector('.book-text');
+        textWrapper.querySelector('.title').textContent = bookObject.title;
+        textWrapper.querySelector('.author').textContent = bookObject.author;
+        textWrapper.querySelector('.pages').textContent = bookObject.pages;
+        const readbtn = currentCard.querySelector('.button-wrapper').querySelector('.read-btn');
+        const removebtn = currentCard.querySelector('.button-wrapper').querySelector('.remove-btn');
+
+        if (bookObject.read == true) {
+            readbtn.classList.add('true');
+            readbtn.textContent = 'Read';
+        }
+    
+        readButtonTrigger(readbtn, bookObject);
+        removebtn.onclick = () => currentCard.remove();
+
+        return currentCard;
+    };
 };
 
 function addBookToLibrary(currentBook) {
-    bookCard(currentBook);
+    DisplayBookCard(currentBook);
     myLibrary.push(currentBook);
     currentBook.bookIndex = myLibrary.length - 1; 
     console.table(myLibrary);
 }
 
-function bookCard(bookObject) {
-    const currentCard = bookCardBlueprint.cloneNode(true);
+function DisplayBookCard(bookObject) {
+    const currentCard = new bookCard(bookObject);
     bookGrid.appendChild(currentCard);
     currentCard.classList.remove('hidden');
-
-    const textWrapper = currentCard.querySelector('.book-text');
-    textWrapper.querySelector('.title').textContent = bookObject.title;
-    textWrapper.querySelector('.author').textContent = bookObject.author;
-    textWrapper.querySelector('.pages').textContent = bookObject.pages;
-    const readbtn = currentCard.querySelector('.button-wrapper').querySelector('.read-btn');
-    const removebtn = currentCard.querySelector('.button-wrapper').querySelector('.remove-btn');
-
-    if (bookObject.read == true) {
-        readbtn.classList.add('true');
-        readbtn.textContent = 'Read';
-    }
-
-    readButtonTrigger(readbtn, bookObject);
-    removebtn.onclick = () => currentCard.remove();
 
 };
 
